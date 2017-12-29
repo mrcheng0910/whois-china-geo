@@ -1,0 +1,12 @@
+2017-02-12 10:52:04 - 数据库连接成功
+2017-02-12 10:52:04 - 执行:SELECT svr_name, ip, port_available FROM malicious_url_whois.whois_srvip
+2017-02-12 10:52:04 - 数据库关闭连接
+2017-02-12 10:52:08 - 数据库连接成功
+2017-02-12 10:52:08 - 执行:SELECT svr_name, ip, port_available FROM malicious_url_whois.whois_srvip
+2017-02-12 10:52:08 - 数据库关闭连接
+2017-02-12 10:52:09 - 数据库连接成功
+2017-02-12 10:52:09 - 执行:SELECT svr_name, ip, port_available FROM malicious_url_whois.whois_srvip
+2017-02-12 10:52:09 - 数据库关闭连接
+2017-02-12 14:43:46 - 数据库连接成功
+2017-02-12 14:43:46 - 执行:SELECT svr_name, ip, port_available FROM malicious_url_whois.whois_srvip
+2017-02-12 14:43:46 - 数据库关闭连接

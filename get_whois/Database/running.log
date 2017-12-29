@@ -1,0 +1,95 @@
+2017-02-12 10:17:28 - 数据库连接成功
+2017-02-12 10:17:28 - 执行:USE malicious_url_whois
+2017-02-12 10:17:28 - 执行:SELECT whois_flag FROM domain WHERE `domain` = 'ccbanz.cc';
+2017-02-12 10:17:28 - 执行:UPDATE `domain` SET `whois_flag`=1 WHERE (`domain`='ccbanz.cc');
+2017-02-12 10:17:28 - 执行:REPLACE INTO `whois` set `domain` = 'ccbanz.cc', `tld` = 'cc', `flag` = 1, `domain_status` = '4', `sponsoring_registrar` = 'HIC
+2017-02-12 10:17:28 - 提交事务
+2017-02-12 10:17:28 - 数据库关闭连接
+2017-02-12 11:39:35 - 数据库连接成功
+2017-02-12 11:39:35 - 执行:USE malicious_url_whois
+2017-02-12 11:39:35 - 执行:SELECT whois_flag FROM domain WHERE `domain` = 'ccbanz.cc';
+2017-02-12 11:39:35 - 执行:SELECT `updated_date` FROM `whois` WHERE (`domain`='ccbanz.cc');
+2017-02-12 11:39:35 - 执行:REPLACE INTO `whois` set `domain` = 'ccbanz.cc', `tld` = 'cc', `flag` = 1, `domain_status` = '4', `sponsoring_registrar` = 'HIC
+2017-02-12 11:39:35 - 提交事务
+2017-02-12 11:39:35 - 数据库关闭连接
+2017-02-12 11:39:48 - 数据库连接成功
+2017-02-12 11:39:48 - 执行:USE malicious_url_whois
+2017-02-12 11:39:48 - 执行:SELECT whois_flag FROM domain WHERE `domain` = 'ccbanz.cc';
+2017-02-12 11:39:48 - 执行:SELECT `updated_date` FROM `whois` WHERE (`domain`='ccbanz.cc');
+2017-02-12 11:39:48 - 执行:REPLACE INTO `whois` set `domain` = 'ccbanz.cc', `tld` = 'cc', `flag` = 1, `domain_status` = '4', `sponsoring_registrar` = 'HIC
+2017-02-12 11:39:48 - 提交事务
+2017-02-12 11:39:48 - 数据库关闭连接
+2017-02-12 11:40:39 - 数据库连接成功
+2017-02-12 11:40:39 - 执行:USE malicious_url_whois
+2017-02-12 11:40:39 - 执行:SELECT whois_flag FROM domain WHERE `domain` = 'ccbanz.cc';
+2017-02-12 11:40:39 - 执行:SELECT `updated_date` FROM `whois` WHERE (`domain`='ccbanz.cc');
+2017-02-12 11:40:39 - 执行:REPLACE INTO `whois` set `domain` = 'ccbanz.cc', `tld` = 'cc', `flag` = 1, `domain_status` = '4', `sponsoring_registrar` = 'HIC
+2017-02-12 11:40:40 - 提交事务
+2017-02-12 11:40:40 - 数据库关闭连接
+2017-02-12 11:40:41 - 数据库连接成功
+2017-02-12 11:40:41 - 执行:USE malicious_url_whois
+2017-02-12 11:40:41 - 执行:SELECT whois_flag FROM domain WHERE `domain` = 'ccbanz.cc';
+2017-02-12 11:40:41 - 执行:SELECT `updated_date` FROM `whois` WHERE (`domain`='ccbanz.cc');
+2017-02-12 11:40:41 - 执行:REPLACE INTO `whois` set `domain` = 'ccbanz.cc', `tld` = 'cc', `flag` = 1, `domain_status` = '4', `sponsoring_registrar` = 'HIC
+2017-02-12 11:40:41 - 提交事务
+2017-02-12 11:40:41 - 数据库关闭连接
+2017-02-12 11:40:42 - 数据库连接成功
+2017-02-12 11:40:42 - 执行:USE malicious_url_whois
+2017-02-12 11:40:42 - 执行:SELECT whois_flag FROM domain WHERE `domain` = 'ccbanz.cc';
+2017-02-12 11:40:42 - 执行:SELECT `updated_date` FROM `whois` WHERE (`domain`='ccbanz.cc');
+2017-02-12 11:40:42 - 执行:REPLACE INTO `whois` set `domain` = 'ccbanz.cc', `tld` = 'cc', `flag` = 1, `domain_status` = '4', `sponsoring_registrar` = 'HIC
+2017-02-12 11:40:42 - 提交事务
+2017-02-12 11:40:42 - 数据库关闭连接
+2017-02-12 11:40:43 - 数据库连接成功
+2017-02-12 11:40:43 - 执行:USE malicious_url_whois
+2017-02-12 11:40:43 - 执行:SELECT whois_flag FROM domain WHERE `domain` = 'ccbanz.cc';
+2017-02-12 11:40:43 - 执行:SELECT `updated_date` FROM `whois` WHERE (`domain`='ccbanz.cc');
+2017-02-12 11:40:43 - 执行:REPLACE INTO `whois` set `domain` = 'ccbanz.cc', `tld` = 'cc', `flag` = 1, `domain_status` = '4', `sponsoring_registrar` = 'HIC
+2017-02-12 11:40:43 - 提交事务
+2017-02-12 11:40:43 - 数据库关闭连接
+2017-02-12 11:41:29 - 数据库连接成功
+2017-02-12 11:41:29 - 执行:USE malicious_url_whois
+2017-02-12 11:41:29 - 执行:SELECT whois_flag FROM domain WHERE `domain` = 'ccbanz.cc';
+2017-02-12 11:41:29 - 执行:SELECT `updated_date` FROM `whois` WHERE (`domain`='ccbanz.cc');
+2017-02-12 11:41:29 - 执行:REPLACE INTO `whois` set `domain` = 'ccbanz.cc', `tld` = 'cc', `flag` = 1, `domain_status` = '4', `sponsoring_registrar` = 'HIC
+2017-02-12 11:41:29 - 提交事务
+2017-02-12 11:41:29 - 数据库关闭连接
+2017-02-12 11:43:54 - 数据库连接成功
+2017-02-12 11:43:54 - 执行:USE malicious_url_whois
+2017-02-12 11:43:54 - 执行:SELECT whois_flag FROM domain WHERE `domain` = 'ccbanz.cc';
+2017-02-12 11:43:54 - 执行:SELECT `updated_date` FROM `whois` WHERE (`domain`='ccbanz.cc');
+2017-02-12 11:43:54 - whowas更新 : ccbanz.cc
+2017-02-12 11:43:54 - 执行:INSERT INTO whowas(domain, tld, flag, domain_status, sponsoring_registrar, top_whois_server, sec_whois_server, reg_name, reg_ph
+2017-02-12 11:43:54 - 执行:REPLACE INTO `whois` set `domain` = 'ccbanz.cc', `tld` = 'cc', `flag` = 1, `domain_status` = '4', `sponsoring_registrar` = 'HIC
+2017-02-12 11:43:54 - 提交事务
+2017-02-12 11:43:54 - 数据库关闭连接
+2017-02-12 11:44:04 - 数据库连接成功
+2017-02-12 11:44:04 - 执行:USE malicious_url_whois
+2017-02-12 11:44:04 - 执行:SELECT whois_flag FROM domain WHERE `domain` = 'ccbanz.cc';
+2017-02-12 11:44:04 - 执行:SELECT `updated_date` FROM `whois` WHERE (`domain`='ccbanz.cc');
+2017-02-12 11:44:04 - 执行:REPLACE INTO `whois` set `domain` = 'ccbanz.cc', `tld` = 'cc', `flag` = 1, `domain_status` = '4', `sponsoring_registrar` = 'HIC
+2017-02-12 11:44:04 - 提交事务
+2017-02-12 11:44:04 - 数据库关闭连接
+2017-02-12 11:44:05 - 数据库连接成功
+2017-02-12 11:44:05 - 执行:USE malicious_url_whois
+2017-02-12 11:44:05 - 执行:SELECT whois_flag FROM domain WHERE `domain` = 'ccbanz.cc';
+2017-02-12 11:44:05 - 执行:SELECT `updated_date` FROM `whois` WHERE (`domain`='ccbanz.cc');
+2017-02-12 11:44:05 - 执行:REPLACE INTO `whois` set `domain` = 'ccbanz.cc', `tld` = 'cc', `flag` = 1, `domain_status` = '4', `sponsoring_registrar` = 'HIC
+2017-02-12 11:44:05 - 提交事务
+2017-02-12 11:44:05 - 数据库关闭连接
+2017-02-12 11:44:05 - 数据库连接成功
+2017-02-12 11:44:05 - 执行:USE malicious_url_whois
+2017-02-12 11:44:05 - 执行:SELECT whois_flag FROM domain WHERE `domain` = 'ccbanz.cc';
+2017-02-12 11:44:05 - 执行:SELECT `updated_date` FROM `whois` WHERE (`domain`='ccbanz.cc');
+2017-02-12 11:44:05 - 执行:REPLACE INTO `whois` set `domain` = 'ccbanz.cc', `tld` = 'cc', `flag` = 1, `domain_status` = '4', `sponsoring_registrar` = 'HIC
+2017-02-12 11:44:05 - 提交事务
+2017-02-12 11:44:05 - 数据库关闭连接
+2017-02-12 11:44:24 - 数据库连接成功
+2017-02-12 11:44:24 - 执行:USE malicious_url_whois
+2017-02-12 11:44:24 - 执行:SELECT whois_flag FROM domain WHERE `domain` = 'ccbanz.cc';
+2017-02-12 11:44:24 - 执行:SELECT `updated_date` FROM `whois` WHERE (`domain`='ccbanz.cc');
+2017-02-12 11:44:24 - whowas更新 : ccbanz.cc
+2017-02-12 11:44:24 - 执行:INSERT INTO whowas(domain, tld, flag, domain_status, sponsoring_registrar, top_whois_server, sec_whois_server, reg_name, reg_ph
+2017-02-12 11:44:24 - 执行:REPLACE INTO `whois` set `domain` = 'ccbanz.cc', `tld` = 'cc', `flag` = 1, `domain_status` = '4', `sponsoring_registrar` = 'HIC
+2017-02-12 11:44:24 - 提交事务
+2017-02-12 11:44:24 - 数据库关闭连接
