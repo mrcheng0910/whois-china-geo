@@ -7,9 +7,12 @@ import Levenshtein
 import json
 import re
 from collections import Counter
+from get_whois.data_base import MySQL
+from get_whois.config import SOURCE_CONFIG
 import sys
 reload(sys)
 sys.setdefaultencoding('utf8')
+
 class ProvinceCityObj(object):
     """
     省份和城市名称类
@@ -95,22 +98,23 @@ class ProvinceCityObj(object):
 
     def match_candidate_province(self, name):
         """
-        name:可能是省份，也可能是城市
-        与标准省份名称进行匹配，获取相似的候选的省份名称和相似度集合。
+        与省份/直辖市/自治区/行政区等数据进行比较，根据相似度，匹配出相似的候选项
+        :param name string: 待比较的选项
+        :return: candidate_provinces dict : 包含匹配的省份名称，所匹配的省份别名，相似度和匹配等级
+
         """
         candidate_provinces = []
         for prov_name in self.region_data:
             prov_alias = self.region_data[prov_name]['alias']
-            for a in prov_alias:
+            for alias in prov_alias:
                 province_ratio = {}
-                ratio,level = self._compute_similarity(name, a)  # 相似性
+                ratio, level = self._compute_similarity(name, alias)  # 相似度和等级
                 if ratio >= 0.90:
                     province_ratio["province"] = prov_name
-                    province_ratio["alias"] = a
+                    province_ratio["alias"] = alias
                     province_ratio["ratio"] = ratio
                     province_ratio["level"] = level
                     candidate_provinces.append(province_ratio)
-
         candidate_provinces = sorted(candidate_provinces, key=lambda ratio: ratio["ratio"], reverse=True)  # 降序排序
         return candidate_provinces
 
@@ -120,11 +124,11 @@ class ProvinceCityObj(object):
         """
 
         self._process_province_city()  # 省份和城市名称格式化处理
-        self.candidate_provinces = self.match_candidate_province(self.unconfirmed_province)  # 获取与省份相似的名称和概率集合
+        self.candidate_provinces = self.match_candidate_province(self.unconfirmed_province)  # 获取与省份相似的名称和相似度集合
         self.choose_province()  # 获取省份名称和其他情况
+
         self.match_candidate_city()  # 获取对应省份的相似名称的城市和概率集合
         self.choose_city()
-
 
     def choose_province(self):
         """
@@ -139,22 +143,35 @@ class ProvinceCityObj(object):
 
         self.confirmed_province,self.multiple_province = self.vote_poll(province_counter)
 
-
-    def vote_poll(self,counter):
-        items = []
-        t = 0
+    def vote_poll(self, counter):
+        """
+        选择票数最多的候选项
+        :param counter: dict 选项和票数分布
+        :return:
+            most_votes_item: string 得票最多的选项，可能是票数相同多个候选项
+            is_same:  bool 是否有相同票数的选项
+        """
+        items = []  # 候选项
+        initial_vote = 0  # 初始票数为0
+        # 若只有1个候选项，则直接输出唯一候选项，无相同票数
         if len(counter) == 1:
-            return counter.keys()[0], False
-        for i, j in counter.most_common():
-            if j >= t:
-                items.append(i)
-                t = j
+            most_votes_item = counter.keys()[0]
+            is_same = False
+        else:  # 多于1个候选项时获取票数最多的选项
+            for item, votes in counter.most_common():  # 注意根据票数已对候选项进行了排序
+                if votes >= initial_vote:
+                    items.append(item)
+                    initial_vote = votes
+                else:    # 若无，则退出
+                    break
+
+            if len(items) >= 2:
+                is_same = True
             else:
-                break
-        if len(items) >= 2:
-            return ','.join(items), True  # 可能会匹配出多个省份，todo 待进行多方面验证
-        else:
-            return ','.join(items), False
+                is_same = False
+            most_votes_item = ','.join(items)
+
+        return most_votes_item, is_same
 
     def match_candidate_city(self):
         """
@@ -162,28 +179,36 @@ class ProvinceCityObj(object):
         :param province_region:
         :return:
         """
-        # 无法匹配出城市
-        if self.confirmed_province and self.multiple_province:  # 匹配出多个省份，无法匹配城市
-            # print "匹配出多个省份",self.confirmed_province
+        # 未匹配到省份，省份为空
+        if not self.confirmed_province:
             return
-        elif not self.confirmed_province:  # 没有匹配出省份，无法匹配城市
-            # print "没有匹配出省份"
+
+        # 匹配到两个省份
+        if self.multiple_province:  # 匹配出多个省份，无法匹配城市
+            print "匹配出多个省份",self.confirmed_province.split(',')
+
+
+
             return
 
         province_region = self.region_data[self.confirmed_province]['city']
+        self.candidate_citys = self.match_city(province_region,self.unconfirmed_city)
 
+    def match_city(self,province_region,unconfirmed_city):
+        candidate_citys = []
         for c in province_region:
             city_alias = province_region[c]
             for i in city_alias:
                 city_ratio = {}
-                ratio,level = self._compute_similarity(self.unconfirmed_city, i)
+                ratio, level = self._compute_similarity(unconfirmed_city, i)
                 if ratio >= 0.9:
                     city_ratio["city"] = c
                     city_ratio["alias"] = i
                     city_ratio["ratio"] = ratio
                     city_ratio["level"] = level
-                    self.candidate_citys.append(city_ratio)
-        self.candidate_citys = sorted(self.candidate_citys, key=lambda ratio: ratio["ratio"], reverse=True)  # 降序排序
+                    candidate_citys.append(city_ratio)
+        candidate_citys = sorted(candidate_citys, key=lambda ratio: ratio["ratio"], reverse=True)  # 降序排序
+        return candidate_citys
 
     def choose_city(self):
         """
@@ -213,8 +238,8 @@ class ProvinceCityObj(object):
 
     def analyze_feature(self):
 
-        # if self.confirmed_province != "heilongjiang":
-        #     return
+        if self.confirmed_province != "beijing":
+            return
         print "待匹配的省份和城市为：",self.original_province+","+self.original_city
         if not self.confirmed_province:
             print "没有找到匹配的省份，其待候选的省份列表为："
@@ -252,17 +277,6 @@ def verify_province_city(province_name,city_name):
     return verify_results
 
 
-def read_raw_data():
-    """
-    读取待处理的省份与对应的城市，这是未分类和验证的数据，有大量异常和错误
-    """
-    fp = open('./data/province_city.txt', 'r')
-    data = []
-    for i in fp:
-        data.append(i)
-    return data
-
-
 def read_province():
     """
     读取省份名称和其别名，以及省份下的城市以及城市名称
@@ -271,11 +285,6 @@ def read_province():
     with open('province_city.json','r') as f:
         data = json.load(f)
     return data
-
-
-from get_whois.data_base import MySQL
-from get_whois.config import SOURCE_CONFIG
-
 
 def fetch_resource_data():
     """获得源数据
@@ -288,6 +297,7 @@ def fetch_resource_data():
     db.close()
     return results
 
+# def update_db():
 
 def main():
 
