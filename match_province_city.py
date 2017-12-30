@@ -184,11 +184,18 @@ class ProvinceCityObj(object):
             return
 
         # 匹配到两个省份
-        if self.multiple_province:  # 匹配出多个省份，无法匹配城市
-            print "匹配出多个省份",self.confirmed_province.split(',')
+        if self.multiple_province:
+            # print "匹配出多个省份",self.confirmed_province.split(',')
+            confirmed_province_citys = []
 
-
-
+            for p in self.confirmed_province.split(','):
+                province_region = self.region_data[p]['city']
+                citys = self.match_city(province_region,self.unconfirmed_city)
+                confirmed_province_citys.append(citys)
+                if citys:
+                    self.confirmed_province = p
+                    self.candidate_citys = citys
+                    break
             return
 
         province_region = self.region_data[self.confirmed_province]['city']
@@ -238,8 +245,8 @@ class ProvinceCityObj(object):
 
     def analyze_feature(self):
 
-        if self.confirmed_province != "beijing":
-            return
+        # if self.confirmed_province != "beijing":
+        #     return
         print "待匹配的省份和城市为：",self.original_province+","+self.original_city
         if not self.confirmed_province:
             print "没有找到匹配的省份，其待候选的省份列表为："
@@ -260,19 +267,19 @@ class ProvinceCityObj(object):
             print '匹配的城市为：', self.confirmed_city
 
 
-def verify_province_city(province_name,city_name):
+def verify_province_city(province_name,city_name,region_data):
     """
     验证输入的省份和城市
     :param province_name:
     :param city_name:
     :return:
     """
-    region_data = read_province()  # 标准区域数据
+    # region_data = read_province()  # 标准区域数据
     province_city_obj = ProvinceCityObj(province_name, city_name, region_data)  # 创建对象
     province_city_obj.choose_province_city()  # 选择省份和城市
 
     verify_results = province_city_obj.get_all_feature()
-    province_city_obj.analyze_feature()
+    # province_city_obj.analyze_feature()
 
     return verify_results
 
@@ -292,21 +299,30 @@ def fetch_resource_data():
     :return: results: 查询结果
     """
     db = MySQL(SOURCE_CONFIG)
-    db.query('SELECT reg_province,reg_city FROM domain_info WHERE reg_country="cn" OR reg_country = "china" GROUP BY reg_city')
+    db.query('SELECT reg_province,reg_city FROM domain_info WHERE (reg_country="cn" OR reg_country = "china") AND province IS NULL GROUP BY reg_city')
     results = db.fetch_all_rows()
     db.close()
     return results
 
-# def update_db():
+def update_db(db,province,city,reg_province,reg_city):
+    # db = MySQL(SOURCE_CONFIG)
+    sql = 'UPDATE domain_info SET province="%s",city="%s" WHERE reg_province = "%s" AND reg_city="%s" ' %(province,city,reg_province,reg_city)
+    db.update_no_commit(sql)
+    # db.close()
+
 
 def main():
-
+    region_data = read_province()  # 标准区域数据
+    db = MySQL(SOURCE_CONFIG)
     data = fetch_resource_data()
-    for i,j in data:
-        verify_province_city(i,j)
+    for p, c in data:
+        result = verify_province_city(p, c,region_data)
+        print result
+        update_db(db,result['confirmed_province'],result['confirmed_city'], p, c)
 
+    db.commit()
+    db.close()
 
 if __name__ == "__main__":
-
-    main()
+    main()   # todo 优化增加内存字典
 
