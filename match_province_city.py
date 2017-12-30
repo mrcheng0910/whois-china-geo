@@ -299,7 +299,7 @@ def fetch_resource_data():
     :return: results: 查询结果
     """
     db = MySQL(SOURCE_CONFIG)
-    db.query('SELECT reg_province,reg_city FROM domain_info WHERE (reg_country="cn" OR reg_country = "china") AND province IS NULL GROUP BY reg_city')
+    db.query('SELECT reg_province,reg_city FROM domain_info WHERE (reg_country="cn" OR reg_country = "china") AND province IS NULL GROUP BY reg_city,reg_province')
     results = db.fetch_all_rows()
     db.close()
     return results
@@ -318,11 +318,11 @@ def main():
     for p, c in data:
         result = verify_province_city(p, c,region_data)
         print result
-        update_db(db,result['confirmed_province'],result['confirmed_city'], p, c)
+        update_db(db,result['confirmed_province'], result['confirmed_city'], p, c)
 
     db.commit()
     db.close()
 
 if __name__ == "__main__":
-    main()   # todo 优化增加内存字典
+    main()
 
