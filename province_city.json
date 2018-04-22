@@ -4,6 +4,7 @@
     "alias": ["beijing","beijingshi","北京市","北京","bj","bjs"],
     "city":
     {
+      "beijing": ["beijing","beijingshi","北京市","北京","bj","bjs"],
       "haidian": ["haidianqu","haidian","hdq","hd","海淀","海淀区"],
       "chaoyang": ["chaoyangqu","chaoyang","cyq","cy","朝阳区","朝阳"],
       "dongcheng":["dongchengqu","dongcheng","dc","dcq","东城区","东城"],
@@ -29,6 +30,7 @@
     "alias":["tianjin","tianjinshi","天津","天津市","tj","tjs"],
     "city":
     {
+       "tianjin":["tianjin","tianjinshi","天津","天津市","tj","tjs"],
       "heping":["hepingqu","heping","hpq","hp","和平区","和平"],
       "hedong":["hedongqu","hedong","hdq","hd","河东区","河东"],
       "hexi":["hexiqu","hexi","hx","hxq","河西区","河西"],
@@ -54,6 +56,7 @@
     "alias":["hebei","hebeisheng","河北省","河北","he","hes"],
     "city":
     {
+      "hebei":["hebei","hebeisheng","河北省","河北","he","hes"],
       "shijiazhuang":["shijiazhuangshi","shijiazhuang","sjz","sjzs","石家庄市","石家庄"],
       "baoding":["baodingshi","baoding","bds","bd","保定市","保定"],
       "cangzhou":["cangzhoushi","cangzhou","czs","cz","沧州市","沧州"],
@@ -94,6 +97,7 @@
     "alias":["shanghai","shanghaishi","上海市","上海","sh","shs"],
     "city":
     {
+      "shanghai":["shanghai","shanghaishi","上海市","上海","sh","shs"],
       "huangpu":["huangpuqu","huangpu","hp","hpq","黄浦区","黄埔"],
       "xuhui": ["xuhuiqu","xuhui","xh","xhq","徐汇区","徐汇"],
       "changning": ["changningqu","changning","cnq","cn","长宁区","长宁"],
@@ -118,6 +122,7 @@
     "alias":["chongqing","chongqingshi","重庆市","重庆","cq","cqs"],
     "city":
     {
+      "chongqing":["chongqing","chongqingshi","重庆市","重庆","cq","cqs"],
       "dadukou":["dadukouqu","dadukou","ddk","ddkq","大渡口区","大渡口区"],
       "jiangbei":["jiangbeiqu","jiangbei","jbq","jb","江北区","江北"],
       "shapingba":["shapingbaqu","shapingba","spb","spbq","沙坪坝区","沙坪坝"],
@@ -165,7 +170,7 @@
     "alias":["shanxi","shanxisheng","山西省","山西","sx","sxs"],
     "city":
     {
-
+      "shanxi":["shanxi","shanxisheng","山西省","山西","sx","sxs"],
       "taiyuan":["taiyuanshi","taiyuan","tys","ty","太原市","太原"],
       "datong":["datongshi","datong","dts","dt","大同市","大同"],
       "yangquan":["yangquanshi","yangquan","yq","yqs","阳泉市","阳泉"],
@@ -196,6 +201,7 @@
     "alias":["neimenggu","neimengguzizhiqu","内蒙古","内蒙古自治区","nm","nmg"],
     "city":
     {
+      "neimenggu":["neimenggu","neimengguzizhiqu","内蒙古","内蒙古自治区","nm","nmg"],
       "bayannaoer":["bayannaoershi","bayannaoer","bynes","byne","巴彦淖尔市","巴彦淖尔"],
       "wuhai":["wuhaishi","wuhai","whs","wh","乌海市","乌海"],
       "eerduosi":["eerduosishi","eerduosi","eedss","eedss","鄂尔多斯市","鄂尔多斯"],
@@ -216,6 +222,7 @@
     "alias":["liaoning","liaoningsheng","辽宁省","辽宁","ln","lns"],
     "city":
     {
+      "liaoning":["liaoning","liaoningsheng","辽宁省","辽宁","ln","lns"],
       "shenyang":["shenyangshi","shenyang","sys","sy","沈阳市","沈阳"],
       "dalian":["dalianshi","dalian","dls","dl","大连市","大连"],
       "anshan":["anshanshi","anshan","as","ass","鞍山市","鞍山"],
@@ -290,6 +297,7 @@
     "alias":["heilongjiang","heilongjiangsheng","黑龙江省","黑龙江","hlj","hljs","hl"],
     "city":
     {
+      "heilongjiang":["heilongjiang","heilongjiangsheng","黑龙江省","黑龙江","hlj","hljs","hl"],
       "haerbin":["haerbinshi","haerbin","hebs","heb","harbin","哈尔滨市","哈尔滨"],
       "qiqihaer":["qiqihaershi","qiqihaer","qqhes","qqhe","齐齐哈尔市","齐齐哈尔"],
       "mudanjiang":["mudanjiangshi","mudanjiang","mdjs","mdj","牡丹江市","牡丹江"],
@@ -311,6 +319,7 @@
     "alias":["jiangsu","jiangsusheng","江苏省","江苏","js","jss"],
     "city":
     {
+      "jiangsu":["jiangsu","jiangsusheng","江苏省","江苏","js","jss"],
       "nanjing":["nanjing","nanjingshi","nj","njs","南京","南京市"],
       "changzhou":["changzhou","changzhoushi","czs","cz","常州市","常州"],
       "huaian":["huaianshi","huaian","ha","has","淮安市","淮安"],
@@ -332,6 +341,7 @@
     "alias":["zhejiang", "zhejiangsheng", "浙江省", "浙江", "zj", "zjs"],
     "city":
     {
+      "zhejiang":["zhejiang", "zhejiangsheng", "浙江省", "浙江", "zj", "zjs"],
       "hangzhou":["hangzhoushi","hangzhou","hzs","hz","杭州市","杭州"],
       "ningbo":["ningbo","ningboshi","nbs","nb","宁波市","宁波"],
       "huzhou":["huzhoushi","huzhou","hz","hzs","湖州市","湖州"],
@@ -351,6 +361,7 @@
     "alias":["anhui","anhuisheng","安徽省","安徽","ah","ahs"],
     "city":
     {
+      "anhui":["anhui","anhuisheng","安徽省","安徽","ah","ahs"],
       "hefei":["hefei","hefeishi","hf","hfs","合肥市","合肥"],
       "anqing":["anqingshi","anqing","aq","aqs","安庆市","安庆"],
       "bengbu":["bengbushi","bengbu","bbs","bb","蚌埠市","蚌埠"],
@@ -375,6 +386,7 @@
     "alias":["fujian","fujiansheng","福建省","福建","fj","fjs"],
     "city":
     {
+      "fujian":["fujian","fujiansheng","福建省","福建","fj","fjs"],
       "xiamen":["xiamenshi","xiamen","xm","xms","厦门市","厦门"],
       "fuzhou":["fuzhoushi","fuzhou","fzs","fz","福州市","福州"],
       "longyan":["longyanshi","longyan","lys","ly","龙岩市","龙岩"],
@@ -392,6 +404,7 @@
     "alias":["jiangxi","jiangxisheng","江西省","江西","jx","jxs"],
     "city":
     {
+       "jiangxi":["jiangxi","jiangxisheng","江西省","江西","jx","jxs"],
       "nanchang":["nanchangshi","nanchang","ncs","nc","南昌市","南昌"],
       "fuzhou":["fuzhoushi","fuzhou","fz","fzs","抚州市","抚州"],
       "ganzhou":["ganzhoushi","ganzhou","gzs","gz","赣州市","赣州"],
@@ -411,6 +424,7 @@
     "alias":["shandong","shandongsheng","山东省","山东","sds","sd"],
     "city":
     {
+       "shandong":["shandong","shandongsheng","山东省","山东","sds","sd"],
       "jinan":["jinanshi", "jinan", "jn", "jns", "济南市", "济南"],
       "qingdao":["qingdao", "qingdaoshi", "qds", "qd", "青岛市", "青岛"],
       "binzhou":["binzhou", "binzhoushi", "bzs", "bz", "滨州市", "滨州"],
@@ -436,6 +450,7 @@
     "alias":["henan","henansheng","河南省","河南","ha","has"],
     "city":
     {
+      "henan":["henan","henansheng","河南省","河南","ha","has"],
       "zhengzhou":["zhengzhoushi","zhengzhou","zzs","zz","郑州市","郑州"],
       "anyang":["anyangshi","anyang","ay","ays","安阳市","安阳"],
       "hebi":["hebi","hebishi","hbs","hb","鹤壁市","鹤壁"],
@@ -463,6 +478,7 @@
     "alias":["hubei","hubeisheng","湖北省","湖北","hb","hbs"],
     "city":
     {
+      "hubei":["hubei","hubeisheng","湖北省","湖北","hb","hbs"],
       "wuhan":["wuhanshi","wuhan","wh","whs","武汉","武汉市"],
       "ezhou":["ezhou","ezhoushi","ezs","ez","鄂州市","鄂州"],
       "huanggang":["huanggang","huanggangshi","hg","hgs","黄冈","黄冈市"],
@@ -489,6 +505,7 @@
     "alias":["hunan","hunansheng","湖南省","湖南","hn","hns"],
     "city":
     {
+      "hunan":["hunan","hunansheng","湖南省","湖南","hn","hns"],
       "changsha":["changshashi","changsha","css","cs","长沙市","长沙"],
       "changde":["changdeshi","changde","cds","cd","常德市","常德"],
       "chenzhou":["chenzhoushi","chenzhou","czs","cz","郴州市","郴州"],
@@ -511,6 +528,7 @@
     "alias":["guangdong","guangdongsheng","广东省","广东","gd","gds"],
     "city":
     {
+      "guangdong":["guangdong","guangdongsheng","广东省","广东","gd","gds"],
       "guangzhou":["guangzhoushi","guangzhou","gzs","gz","广州市","广州"],
       "shenzhen":["shenzhenshi","shenzhen","szs","sz","深圳市","深圳"],
       "qingyuan":["qingyuanshi","qingyuan","qys","qy","清远市","清远"],
@@ -560,6 +578,7 @@
     "alias":["guangxi","guangxizhuangzuzizhiqu","gxzzzzq","广西壮族自治区","广西","gx","gxs"],
     "city":
     {
+      "guangxi":["guangxi","guangxizhuangzuzizhiqu","gxzzzzq","广西壮族自治区","广西","gx","gxs"],
       "baise":["baiseshi","baise","bss","bs","百色市","百色"],
       "hechi":["hechishi","hechi","hcs","hc","河池市","河池"],
       "liuzhou":["liuzhoushi","liuzhou","lzs","lz","柳州市","柳州"],
@@ -582,6 +601,7 @@
     "alias":["hainan","hainansheng","海南省","海南","hi","his"],
     "city":
     {
+      "hainan":["hainan","hainansheng","海南省","海南","hi","his"],
       "haikou":["haikoushi","haikou","hk","hks","海口市","海口"],
       "sanya":["sanyashi","sanya","sys","sy","三亚市","三亚"],
       "danzhou":["danzhoushi","danzhou","dzs","dz","儋州市","儋州"],
@@ -610,6 +630,7 @@
     "alias":["sichuan","sichuansheng","四川省","四川","sc","scs"],
     "city":
     {
+      "sichuan":["sichuan","sichuansheng","四川省","四川","sc","scs"],
       "chengdu":["chengdushi","chengdu","cds","cd","成都市","成都"],
       "mianyang":["mianyangshi","mianyang","绵阳市","绵阳","mys","my"],
       "guangyuan":["guangyuanshi","guangyuan","gys","gy","广元市","广元"],
@@ -639,6 +660,7 @@
     "alias":["guizhou","guizhousheng","贵州省","贵州","gz","gzs"],
     "city":
     {
+      "guizhou":["guizhou","guizhousheng","贵州省","贵州","gz","gzs"],
       "bijie":["bijieshi","bijie","bjs","bj","毕节市","毕节"],
       "zunyi":["zunyishi","zunyi","zys","zy","遵义市","遵义"],
       "tongren":["tongren","tongrenshi","trs","tr","铜仁市","铜仁"],
@@ -656,6 +678,7 @@
     "alias":["yunnan","yunnansheng","云南省","云南","yn","yns"],
     "city":
     {
+      "yunnan":["yunnan","yunnansheng","云南省","云南","yn","yns"],
       "kunming":["kunmingshi","kunming","kms","km","昆明市","昆明"],
       "qujing":["qujingshi","qujing","qjs","qj","曲靖市","曲靖"],
       "yuxi":["yuxi","yuxishi","yxs","yx","玉溪市","玉溪"],
@@ -695,6 +718,7 @@
     "alias":["xizang","xizangzizhiqu","tibet","西藏自治区","西藏","xz","xzzzq"],
     "city":
     {
+      "xizang":["xizang","xizangzizhiqu","tibet","西藏自治区","西藏","xz","xzzzq"],
       "naqu":["naqushi","naqu","nqs","nq","那曲市","那曲"],
       "changdu":["changdushi","changdu","cds","cd","昌都市","昌都"],
       "rikaze":["rikazeshi","rikaze","rkzs","rkz","日喀则市","日喀则"],
@@ -710,6 +734,7 @@
     "alias":["shanxi","shaanxi","shaanxisheng","陕西省","陕西","sn","sns"],
     "city":
     {
+      "shaanxi":["shanxi","shaanxi","shaanxisheng","陕西省","陕西","sn","sns"],
       "xian":["xianshi","xian","xa","xas","西安市","西安"],
       "ankang":["ankangshi","ankang","aks","ak","安康市","安康"],
       "baoji":["baojishi","baoji","bjs","bj","宝鸡市","宝鸡"],
@@ -728,6 +753,7 @@
     "alias":["gansu","gansusheng","甘肃省","甘肃","gs","gss"],
     "city":
     {
+      "gansu":["gansu","gansusheng","甘肃省","甘肃","gs","gss"],
       "jiuquan":["jiuquanshi","jiuquan","jqs","jq","酒泉市","酒泉"],
       "jiayuguan":["jiayuguan","jiayuguanshi","jygs","jyg","嘉峪关市","嘉峪关"],
       "zhangye":["zhangyeshi","zhangye","zys","zy","张掖市","张掖"],
@@ -751,6 +777,7 @@
     "alias":["qinghai","qinghaisheng","青海省","青海","qhs","qh"],
     "city":
     {
+      "qinghai":["qinghai","qinghaisheng","青海省","青海","qhs","qh"],
       "xining":["xiningshi","xining","xns","xn","西宁市","西宁"],
       "haidong":["haidongshi","haidong","hds","hd","海东市","海东"],
       "haiximengguzuzangzu":["haiximengguzuzangzuzizhizhou","haiximengguzuzangzu","hxmgzzzzzz","hxmgzzz","海西蒙古族藏族自治州","海西蒙古族藏族"],
@@ -769,6 +796,7 @@
     "alias":["ningxia","ningxiazizhiqu","ningxiahuizuzizhiqu","ningxiahuizu","nxhzzzq","宁夏自治区","宁夏","nx","nxzzq"],
     "city":
     {
+      "ningxia":["ningxia","ningxiazizhiqu","ningxiahuizuzizhiqu","ningxiahuizu","nxhzzzq","宁夏自治区","宁夏","nx","nxzzq"],
       "yinchuan":["yinchuanshi","yinchuan","ycs","yc","银川市","银川"],
       "shizuishan":["shizuishanshi","shizuishan","szss","szs","石嘴山市","石嘴山"],
       "wuzhong":["wuzhongshi","wuzhong","wzs","wz","吴忠市","吴忠"],
@@ -782,6 +810,7 @@
     "alias":["xinjiang","xinjiangweiwuerzizhiqu","xjwwe","xjwwezzq","新疆维吾尔自治区","新疆","xj"],
     "city":
     {
+      "xinjiang": ["xinjiang","xinjiangweiwuerzizhiqu","xjwwe","xjwwezzq","新疆维吾尔自治区","新疆","xj"],
       "wulumuqi":["wulumuqishi","wulumuqi","wlmqs","wlmq","乌鲁木齐市","乌鲁木齐"],
       "kelamayi":["kelamayishi","kelamayi","klmy","klmys","克拉玛依市","克拉玛依"],
       "tulufan":["tulufanshi","tulufan","tlf","tlfs","吐鲁番市","吐鲁番"],
@@ -812,7 +841,7 @@
   {
     "alias":["taiwan","taiwansheng","台湾省","台湾","tw","tws"],
     "city":
-    {
+    { "taiwan": ["taiwan","taiwansheng","台湾省","台湾","tw","tws"],
       "taibei":["taibeishi","taibei","tbs","tb","台北市","台北"],
       "xinbei":["xinbei","xinbeishi","xbs","xb","新北市","新北"],
       "taoyuan":["taoyuanshi","taoyuan","tys","ty","桃园市","桃园"],
@@ -829,7 +858,7 @@
   {
     "alias":["hongkong","xianggang","香港","xg","hk"],
     "city":
-    {
+    { "hongkong":["hongkong","xianggang","香港","xg","hk"],
       "xianggangdao":["xianggangdao","xianggang","xg","xgd","香港岛","香港"],
       "zhongxin":["zhongxiqu","zhongxi","zxq","zx","中西区","中西"],
       "wanzai":["wanzaiqu","wanzai","湾仔区","湾仔"],
@@ -857,6 +886,7 @@
     "alias":["aomen","macao","澳门","mo"],
     "city":
     {
+      "macao":["aomen","macao","澳门","mo"],
       "huadima": ["花地玛","花地玛堂区","huadima","hdm","hdmtq","huadimatangqu"],
       "shenganduoni":["shenganduoni","shenganduonitangqu","sadntq","sadn","圣安多尼堂区","圣安多尼"],
       "datangqu":["datangqu","大堂区"],

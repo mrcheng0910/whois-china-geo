@@ -98,6 +98,6 @@ if __name__ == '__main__':
     missing_province_city_data = missing_province_city()
     missing_province_city_counter = manage_data(missing_province_city_data)
     for i,j in sorted(missing_province_city_counter.items(), reverse=True):
-        print str(i) +'\t'+str(j)
+        print str(i) + '\t' + str(j)
 
 

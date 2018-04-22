@@ -1,17 +1,24 @@
 # encoding:utf-8
 """
-将四个反查源反查出的域名whois信息汇总在一起，并提取出detail中的reg_phone,reg_postal,reg_pos
+提取域名whois信息中的国家、省份、城市、邮编四个字段的信息
+
+创建者：史吏
+时间：2017-6-1
+
+更新：2017-12-30
+程亚楠：更新更适合自己的场景
+
 """
 
 import sys
 import re
-# import MySQLdb as mdb
 from get_whois.data_base import MySQL
 from get_whois.config import SOURCE_CONFIG
 reload(sys)
 sys.setdefaultencoding('utf8')
 
-def deal_ZD(src1,src2,details):
+
+def deal_ZD(src1,src2,src3,details):
     """
     处理字段值
     :param src1: 
@@ -25,7 +32,10 @@ def deal_ZD(src1,src2,details):
         try:
             res = re.search(src2, details).group().strip()
         except:
-            res = None
+            try:
+                res = re.search(src3, details).group().strip()
+            except:
+                res = None
 
     return res
 
@@ -42,19 +52,26 @@ def extract_geo(domain, details):
         c_reg_province = r'(?<=Registrant State/Province\:).*(?=\n)'
         c_reg_city = r'(?<=Registrant City\:).*(?=\n)'
         c_reg_postal = r'(?<=Registrant Postal Code\:).*(?=\n)'
+
         c_country = r'(?<=Country\:).*(?=\n)'
         c_province = r'(?<=State:).*(?=\n)'
         c_city = r'(?<=City\:).*(?=\n)'
         c_postal = r'(?<=Postal Code\:).*(?=\n)'
+
+        c_owner_country = r'(?<=owner-country\:).*(?=\n)'
+        c_owner_province = r'(?<=owner-state\:).*(?=\n)'
+        c_owner_city = r'(?<=owner-city\:).*(?=\n)'
+        c_owner_postal = r'(?<=owner-zip\:).*(?=\n)'
+
         if details is not None:
             # reg_province处理
-            reg_province = deal_ZD(c_reg_province, c_province,details)
+            reg_province = deal_ZD(c_reg_province, c_province,c_owner_province,details)
             # reg_city处理
-            reg_city = deal_ZD(c_reg_city,c_city,details)
+            reg_city = deal_ZD(c_reg_city,c_city,c_owner_city,details)
             # reg_postal处理
-            reg_postal = deal_ZD(c_reg_postal,c_postal, details)
+            reg_postal = deal_ZD(c_reg_postal,c_postal,c_owner_postal ,details)
             #reg_country 处理
-            reg_country = deal_ZD(c_reg_country, c_country, details)
+            reg_country = deal_ZD(c_reg_country, c_country,c_owner_country,details)
         #
         # reg_province = mdb.escape_string(reg_province) if reg_province is not None else(reg_province)
         # reg_city = mdb.escape_string(reg_city) if reg_city is not None else(reg_city)
@@ -92,9 +109,8 @@ def manage_dw(dw):
     db = MySQL(SOURCE_CONFIG)
     for domain, detail in dw:
         reg_country,reg_province,reg_city,reg_postal = extract_geo(domain, detail)
-
         if reg_country:  # 包括非cn或china的国家
-            update_db(db, reg_country,reg_postal,reg_city,reg_province,domain)
+            update_db(db, reg_country, reg_postal, reg_city, reg_province, domain)
 
     db.commit()
     db.close()

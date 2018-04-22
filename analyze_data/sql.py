@@ -1,0 +1,1 @@
+china_sql = 'reg_country = "cn" OR reg_country = "china" OR reg_country="hk" OR  reg_country="hong kong" OR reg_country="tw"'

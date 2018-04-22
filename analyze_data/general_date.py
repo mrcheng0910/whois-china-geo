@@ -39,10 +39,10 @@ def extract_date(str_time):
         str_time = str_time.split('.')[0]
     elif str_time.find('+0000') != -1:
         str_time = str_time.split('+0000')[0]  # 针对'2005-04-27T16:50:52+0000Z'的情况
+
     try:
         time_parse = parse(str_time)    # 解析日期为datetime型
     except ValueError, e:
-        print "ddd"
         return str_time
 
     try:
